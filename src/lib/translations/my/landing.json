@@ -1,0 +1,7 @@
+{
+	"pageTitle": "ဂျိုဘီ - လျှောက်ထားသော အလုပ်များကို မှတ်တမ်းတင်သော ဝဘ်အပ်",
+	"heroHeading": "လျှောက်ထားသော အလုပ်များကို track လုပ်ပါ။",
+	"heroDescription": "Backend လေ့လာရမှာ ကြောက်ခဲ့တဲ့ ရောင်ဟိန်းဟာ အခု backend ကို ထိတွေ့ဖူးသွားပါပြီ။ အခြေခံပေါ့။ ဆိုတော့ ဒီ Joby ကတော့ frontend ရော backend ပါ ကျွန်တော်တစ်ယောက်တည်း ရေးဖြစ်ခဲ့တဲ့ ပထမဆုံး Web App ဖြစ်ပါတယ်။ SvelteKit, Tailwind, Express နဲ့ MongoDB တို့ကို အသုံးပြုထားပါတယ်။",
+	"heroCtaButtonLabel": "စမ်းသုံးကြည့်မယ်",
+	"owner": "<a href={{link}} target='_blank' class='text-sky-500 hover:underline'>ရောင်ဟိန်း</a>မှ အချစ်များဖြင့် ရေးသည်။ 💙😆"
+}

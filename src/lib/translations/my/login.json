@@ -1,0 +1,9 @@
+{
+	"pageTitle": "အကောင့်ထဲဝင်မယ် - ဂျိုဘီ - လျှောက်ထားသော အလုပ်များကို မှတ်တမ်းတင်သော ဝဘ်အပ်",
+	"heading": "အကောင့်ထဲဝင်ပါ။",
+	"emailLabel": "အီးမေးလ်",
+	"passwordLabel": "စကားဝှက်",
+	"buttonLabel": "အကောင့်ထဲဝင်မယ်",
+	"buttonLabelLoggingIn": "အကောင့်ထဲဝင်နေပါတယ်...",
+	"question": "အကောင့်မရှိသေးဘူးလား။ ဒါဆို <a sveltekit:prefetch href={{link}} class='text-sky-500 hover:underline'>အကောင့်ဖွင့်ပါ။</a>"
+}

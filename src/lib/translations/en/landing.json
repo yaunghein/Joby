@@ -1,0 +1,7 @@
+{
+	"pageTitle": "Joby - The Job Tracking Web App",
+	"heroHeading": "Track your <br /> applied jobs",
+	"heroDescription": "My journey to backend world begins. I was always a frontend guy who is afraid to learn backend techs, tbh. This is my first ever app handling both frontend and backend on my own with SvelteKit, Tailwind, Express and MongoDB.",
+	"heroCtaButtonLabel": "Try the App",
+	"owner": "Code with 💙 by <a href={{link}} target='_blank' class='text-sky-500 hover:underline'>Yan Aung Hein</a>"
+}

@@ -1,0 +1,11 @@
+{
+	"loginLabel": "Login",
+	"registerLabel": "Register",
+	"sourceCodeLabel": "Source Code",
+	"my": "Myanmar",
+	"en": "English",
+	"vn": "Vietnam",
+	"jp": "Japan",
+	"unsupportedLanguageDescription": "Sorry for {{language}}. Only 2 languages is supported at the moment: Myanmar and English. Other languages are just forshow. 🤣",
+	"unsupportedLanguageButtonLabel": "Okay 👍"
+}

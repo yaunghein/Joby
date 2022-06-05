@@ -1,0 +1,10 @@
+{
+	"pageTitle": "Register - Joby - The Job Tracking Web App",
+	"heading": "Register",
+	"nameLabel": "Name",
+	"emailLabel": "Email",
+	"passwordLabel": "Password",
+	"buttonLabel": "Register",
+	"buttonLabelLRegistering": "Registering...",
+	"question": "Already register? <a sveltekit:prefetch href={{link}} class='text-sky-500 hover:underline'>Login</a>"
+}
