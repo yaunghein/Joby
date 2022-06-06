@@ -1,9 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
 
-	// svgs
-	import DashboardScreenshot from '$svgs/DashboardScreenshot.svelte';
-
 	// constants
 	import ROUTES from '$constants/routes';
 
@@ -42,7 +39,7 @@
 			</div>
 
 			<div class="mt-10 md:mt-0">
-				<DashboardScreenshot />
+				<img src="/images/joby-hero-image.png" alt="Joby Dashboard Screenshot" />
 			</div>
 		</div>
 	</div>
