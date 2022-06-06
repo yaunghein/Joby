@@ -36,7 +36,6 @@
 	let isSendindData = false;
 	let error;
 	let success;
-	let addForm;
 
 	// button enable/disable checks - initial array is to reset the array on each status change
 	$: initialConditionsToBeDisabled = [
@@ -97,7 +96,11 @@
 				}
 			});
 			success = getSuccessMessageByStatus(response.data.job);
-			addForm.reset();
+			company = undefined;
+			position = undefined;
+			status = 'pending';
+			startDate = undefined;
+			endDate = undefined;
 			isSendindData = false;
 		} catch (err) {
 			error = err.response.data.msg;
@@ -114,7 +117,7 @@
 	<h2 slot="header" class="text-gray-900 text-2xl font-medium">Add New Job</h2>
 	<div slot="body" class="grid gap-16 grid-cols-1 lg:grid-cols-2">
 		<!-- Add Form  -->
-		<form class="mt-5" on:submit|preventDefault={addJob} bind:this={addForm}>
+		<form class="mt-5" on:submit|preventDefault={addJob}>
 			<div class="grid gap-4 mb-10">
 				<!-- Company Field  -->
 				<div class="flex flex-col">
