@@ -10,7 +10,6 @@
 
 <svelte:head>
 	<title>{$t('landing.pageTitle')}</title>
-	<!-- <title>Joby - The Job Tracking Web App</title> -->
 </svelte:head>
 
 <section in:fade={{ duration: 200 }}>
