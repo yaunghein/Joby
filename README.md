@@ -25,8 +25,6 @@ I'm learning Express with a Udemy course, and the instructor builds only the API
 
 ## Building
 
-To create a production version of your app:
-
 ```bash
 - yarn build
 
