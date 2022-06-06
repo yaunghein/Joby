@@ -12,11 +12,11 @@ I'm learning Express with a Udemy course, and the instructor builds only the API
 
 ```bash
 - yarn
-- npm run dev
+- yarn dev
 
 # to start the server and open the app in a new browser tab
 - yarn
-- npm run dev -- --open
+- yarn dev -- --open
 
 # to start the server on the network for mobile preview
 - yarn
@@ -31,7 +31,7 @@ To create a production version of your app:
 - yarn build
 
 # to preview the production build
-- preview
+- yarn preview
 ```
 
 ## What I built
