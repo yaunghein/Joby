@@ -17,12 +17,12 @@
 		<div class="w-full grid items-center grid-cols-1 md:grid-cols-2">
 			<div class="flex flex-col items-center md:block">
 				<h1
-					class="text-gray-900 text-5xl md:text-[64px] text-center md:text-left font-bold leading-[1.2] capitalize"
+					class="text-gray-900 text-5xl md:text-[4rem] text-center md:text-left font-bold leading-[1.2] capitalize"
 				>
 					{@html $t('landing.heroHeading')}
 				</h1>
 				<p
-					class="text-gray-900 text-base text-center md:text-left mt-6 mb-10 leading-relaxed max-w-full md:max-w-[400px]"
+					class="text-gray-900 text-base text-center md:text-left mt-6 mb-10 leading-relaxed max-w-full md:max-w-[25rem]"
 				>
 					{$t('landing.heroDescription')}
 				</p>

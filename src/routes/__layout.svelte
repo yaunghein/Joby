@@ -56,7 +56,7 @@
 		open = true;
 	}}
 />
-<main class="bg-white my-10 md:my-20">
+<main class="bg-white my-10 md:my-16">
 	<slot />
 </main>
 {#if open}

@@ -72,12 +72,14 @@
 {#if open}
 	<AvatarUpload on:cancel={() => (open = false)} on:success={updateAvatar} />
 {/if}
-<div class="max-w-[1920px] mx-auto h-screen flex">
+<div class="max-full mx-auto h-screen flex">
 	<!-- Side Bar -->
-	<aside class="w-[300px] h-full bg-gray-50 hidden md:flex flex-col shrink-0">
-		<div class="h-[90px] bg-sky-500 flex items-center px-10 rounded-bl-2xl">
+	<aside class="w-[20rem] h-full bg-gray-50 hidden md:flex flex-col shrink-0">
+		<div class="h-[5.625rem] bg-sky-500 flex items-center px-10 rounded-bl-2xl">
 			<div class="flex items-end">
-				<BgBlueLogo />
+				<div class="w-20 h-10">
+					<BgBlueLogo />
+				</div>
 				<span class="text-white text-sm ml-3">Job Tracking App</span>
 			</div>
 		</div>
@@ -129,9 +131,9 @@
 	<div class="w-full">
 		<!-- Nav -->
 		<div
-			class="h-[75px] sm:h-[90px] bg-white flex items-center justify-between md:justify-end px-4 sm:px-6 shadow-sm border-b border-gray-200"
+			class="h-[4.6875rem] sm:h-[5.625rem] bg-white flex items-center justify-between md:justify-end px-4 sm:px-6 shadow-sm border-b border-gray-200"
 		>
-			<a sveltekit:prefetch href={ROUTES.DASHBOARD} class="md:hidden">
+			<a sveltekit:prefetch href={ROUTES.DASHBOARD} class="w-20 h-10 md:hidden">
 				<Logo />
 			</a>
 

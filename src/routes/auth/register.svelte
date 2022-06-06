@@ -60,12 +60,11 @@
 	class="max-w-7xl px-4 md:px-10 mx-auto h-full flex items-center justify-center"
 	in:fade={{ duration: 200 }}
 >
-	<!-- <form class="w-[32.5rem] mx-auto border-2 border-gray-200 rounded-2xl p-10"> -->
 	<form
-		class="w-[520px] mx-auto border-2 border-gray-200 rounded-2xl px-5 sm:px-10 py-8 sm:py-10"
+		class="w-[32.5rem] mx-auto border-2 border-gray-200 rounded-2xl px-5 sm:px-10 py-8 sm:py-10"
 		on:submit|preventDefault={register}
 	>
-		<h1 class="text-sky-500 text-[32px] font-bold mb-6">{$t('register.heading')}</h1>
+		<h1 class="text-sky-500 text-[2rem] font-bold mb-6">{$t('register.heading')}</h1>
 		<div class="grid gap-4 mb-10">
 			<!-- Name Field  -->
 			<div class="flex flex-col">

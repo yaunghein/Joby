@@ -154,7 +154,7 @@
 					<div class="relative w-full grid grid-cols-2">
 						{#each jobsToShow as job, index (job._id)}
 							<div
-								class="relative w-[300px] flex items-center {getClassesByIndex(
+								class="relative w-[18.75rem] flex items-center {getClassesByIndex(
 									index,
 									jobsToShow.length
 								)}"
@@ -221,7 +221,7 @@
 				<div class="sm:hidden md:block lg:hidden py-2 -mt-6">
 					{#each jobsToShow as job, index (job._id)}
 						<div
-							class="relative w-full sm:w-[300px] md:w-full lg:w-[300px] flex flex-col items-center"
+							class="relative w-full sm:w-[18.75rem] md:w-full lg:w-[18.75rem] flex flex-col items-center"
 							in:scale={{ duration: 400, start: 0.95, delay: index * 100 }}
 						>
 							<!-- Top Line -->

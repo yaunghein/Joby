@@ -4,5 +4,11 @@
 
 html {
 	font-family: 'Inter', sans-serif;
-	/* font-size: 0.9vw; */
+	font-size: 1vw;
+}
+@media screen and (max-width: 768px) {
+	html {
+		font-family: 'Inter', sans-serif;
+		font-size: 15px;
+	}
 }

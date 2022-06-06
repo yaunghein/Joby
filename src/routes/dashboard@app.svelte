@@ -162,7 +162,7 @@
 
 		<svelte:fragment slot="body">
 			{#if filteredJobs.length !== 0}
-				<div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4">
+				<div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
 					{#each filteredJobs as job (job._id)}
 						<JobCard
 							{job}

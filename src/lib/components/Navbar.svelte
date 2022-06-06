@@ -39,9 +39,9 @@
 	};
 </script>
 
-<header class="bg-white h-[75px] sm:h-[90px] 2xl:h-24 shadow-sm">
+<header class="bg-white h-[4.6875rem] sm:h-[5.625rem] 2xl:h-24 shadow-sm">
 	<div class="max-w-7xl px-4 md:px-10 mx-auto h-full flex items-center justify-between">
-		<a sveltekit:prefetch href={ROUTES.LANDING}>
+		<a sveltekit:prefetch href={ROUTES.LANDING} class="w-20 h-10">
 			<Logo />
 		</a>
 		<nav class="flex items-center">
