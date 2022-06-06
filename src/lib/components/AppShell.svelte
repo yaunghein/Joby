@@ -183,12 +183,28 @@
 								</MenuItem>
 								<div class="w-full h-[1px] bg-gray-100 my-2" />
 								<MenuItem>
-									<a
-										href={ROUTES.SOURCE_CODE}
-										target="_blank"
-										class="block text-base text-sky-500 font-normal transition-all duration-100 p-2 -mt-1"
-										>Source Code</a
+									<span
+										class="block text-base font-semibold text-gray-500 transition-all duration-100 p-2 -mt-1"
+										>Source Code</span
 									>
+								</MenuItem>
+								<MenuItem>
+									<a
+										href="https://github.com/yaunghein/Joby"
+										target="_blank"
+										class={`block text-sky-400 px-2 my-2 capitalize`}
+									>
+										Frontend
+									</a>
+								</MenuItem>
+								<MenuItem>
+									<a
+										href="https://github.com/yaunghein/Joby-API"
+										target="_blank"
+										class={`block text-sky-400 px-2 mb-2 capitalize`}
+									>
+										Backend
+									</a>
 								</MenuItem>
 							</div>
 						</MenuItems>

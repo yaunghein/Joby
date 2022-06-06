@@ -45,12 +45,46 @@
 			<Logo />
 		</a>
 		<nav class="flex items-center">
-			<a
-				href={ROUTES.SOURCE_CODE}
-				target="_blank"
-				class="text-gray-500 text-base hover:text-sky-500 font-normal hidden md:block transition-all duration-100"
-				>{$t('common.sourceCodeLabel')}</a
-			>
+			<Menu class="relative">
+				<MenuButton class="hidden md:flex items-center">
+					<span
+						class="text-gray-500 text-base hover:text-sky-500 font-normal transition-all duration-100"
+						>{$t('common.sourceCodeLabel')}</span
+					>
+					<div class="-mb-[0.125rem] ml-2 shrink-0">
+						<ChevronDown />
+					</div>
+				</MenuButton>
+				<MenuItems>
+					<div
+						class="absolute z-10 w-28 bg-white shadow-custom-shodow-2 border border-gray-100 rounded-lg mt-2 py-2 right-0 overflow-hidden"
+						transition:scale={{ duration: 100, start: 0.9 }}
+					>
+						<MenuItem let:active>
+							<a
+								href="https://github.com/yaunghein/Joby/"
+								target="_blank"
+								class={`w-28 text-gray-500 px-4 py-2 ${
+									active && 'bg-gray-100'
+								} capitalize flex justify-center`}
+							>
+								Frontend
+							</a>
+						</MenuItem>
+						<MenuItem let:active>
+							<a
+								href="https://github.com/yaunghein/Joby-API"
+								target="_blank"
+								class={`w-28 text-gray-500 px-4 py-2 ${
+									active && 'bg-gray-100'
+								} capitalize flex justify-center`}
+							>
+								Backend
+							</a>
+						</MenuItem>
+					</div>
+				</MenuItems>
+			</Menu>
 			<a
 				sveltekit:prefetch
 				href={ROUTES.REGISTER}
@@ -142,12 +176,28 @@
 							</MenuItem>
 							<div class="w-full h-[1px] bg-gray-100 my-2" />
 							<MenuItem>
-								<a
-									href={ROUTES.SOURCE_CODE}
-									target="_blank"
-									class="block text-base text-sky-500 font-normal transition-all duration-100 p-2 -mt-1"
-									>{$t('common.sourceCodeLabel')}</a
+								<span
+									class="block text-base font-semibold text-gray-500 transition-all duration-100 p-2 -mt-1"
+									>{$t('common.sourceCodeLabel')}</span
 								>
+							</MenuItem>
+							<MenuItem>
+								<a
+									href="https://github.com/yaunghein/Joby"
+									target="_blank"
+									class={`block text-sky-400 px-2 my-2 capitalize`}
+								>
+									Frontend
+								</a>
+							</MenuItem>
+							<MenuItem>
+								<a
+									href="https://github.com/yaunghein/Joby-API"
+									target="_blank"
+									class={`block text-sky-400 px-2 mb-2 capitalize`}
+								>
+									Backend
+								</a>
 							</MenuItem>
 						</div>
 					</MenuItems>
