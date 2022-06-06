@@ -1,28 +1,26 @@
-# create-svelte
+# Joby - The Job Tracking Web App
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+I'm learning Express with a Udemy course, and the instructor builds only the API. I made some modifications to the API, and as a frontend guy, I design a frontend using Figma, and build it myself using SvelteKit. So, This is my first ever app handling both frontend and backend on my own with SvelteKit, Tailwind, Express and MongoDB.
 
-## Creating a project
+- Designs are here: https://www.figma.com/file/QEq2fKyJqCyTUBju8dxUyC/Joby?node-id=0%3A1
+- API repo is here: https://github.com/yaunghein/Joby-API
+- Try the app here: https://job-y.vercel.app/
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte
-
-# create a new project in my-app
-npm init svelte my-app
-```
+![Dashboard](https://i.ibb.co/wc9tZPg/joby-hero-image.png)
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
 ```bash
-npm run dev
+- yarn
+- npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# to start the server and open the app in a new browser tab
+- yarn
+- npm run dev -- --open
+
+# to start the server on the network for mobile preview
+- yarn
+- yarn dev -- --host
 ```
 
 ## Building
@@ -30,9 +28,25 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```bash
-npm run build
+- yarn build
+
+# to preview the production build
+- preview
 ```
 
-You can preview the production build with `npm run preview`.
+## What I built
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- A small landing page for the app
+- Login/Logout functionality with JWT
+- CRUD applied jobs
+- Filter based on status, and search.
+- The timeline for the past jobs as well as the current jobs
+- User Avatar Upload to Cloudinary
+
+## Futher Learning & Development
+
+- Email confirmation
+- Reset password
+- Settings
+
+If you'd like to talk, you can contact me here: https://www.linkedin.com/in/yanaunghein/
