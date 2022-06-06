@@ -68,22 +68,27 @@
 
 	// todo - check token and if it expires, show a session expire popup with only OK button and navigate to login page
 	onMount(async () => {
-		const isTokenExpired = checkTokenLifetime($joby_token);
-		if (isTokenExpired) {
-			goto(ROUTES.LOGIN); // change to showing up session expired popup
-		}
-		const response = await axios.get(`${API_URL}/jobs/${$page.params.jobID}`, {
-			headers: {
-				authorization: `Bearer ${$joby_token}`
+		try {
+			const isTokenExpired = checkTokenLifetime($joby_token);
+			if (isTokenExpired) {
+				goto(ROUTES.LOGIN); // change to showing up session expired popup
 			}
-		});
-		const { job } = response.data;
-		company = job.company;
-		position = job.position;
-		status = job.status;
-		startDate = job.startDate && format(new Date(job.startDate), 'yyyy-MM-dd');
-		endDate = job.endDate && format(new Date(job.endDate), 'yyyy-MM-dd');
-		loading = false;
+			const response = await axios.get(`${API_URL}/jobs/${$page.params.jobID}`, {
+				headers: {
+					authorization: `Bearer ${$joby_token}`
+				}
+			});
+			const { job } = response.data;
+			company = job.company;
+			position = job.position;
+			status = job.status;
+			startDate = job.startDate && format(new Date(job.startDate), 'yyyy-MM-dd');
+			endDate = job.endDate && format(new Date(job.endDate), 'yyyy-MM-dd');
+			loading = false;
+		} catch (err) {
+			loading = false;
+			error = err.response.data.msg;
+		}
 	});
 
 	const updateJob = async () => {
