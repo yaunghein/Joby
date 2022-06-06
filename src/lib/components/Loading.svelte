@@ -1,6 +1,9 @@
 <script>
 	import { fade } from 'svelte/transition';
 
+	// third party packages
+	import { RingLoader } from 'svelte-loading-spinners';
+
 	// props
 	export let loading;
 
@@ -12,5 +15,7 @@
 </script>
 
 {#if shouldStart}
-	<p in:fade={{ duration: 100 }}>Loading...</p>
+	<div class="flex justify-center mt-4" in:fade={{ duration: 200 }}>
+		<RingLoader size="4" color="#0EA5E9" unit="rem" duration="1.5s" />
+	</div>
 {/if}
