@@ -40,7 +40,7 @@
 			localStorage.setItem('joby_token', response.data.token);
 			await goto(ROUTES.DASHBOARD);
 		} catch (err) {
-			error = err.response.data.msg;
+			error = 'There is an error. Please try again later. 😥';
 		}
 		isRegistering = false;
 	};
