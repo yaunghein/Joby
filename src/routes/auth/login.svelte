@@ -18,13 +18,16 @@
 
 	// components
 	import Error from '$components/Error.svelte';
+	import Success from '$components/Success.svelte';
 
 	// states
 	let email;
 	let password;
 	let passwordType = 'password';
 	let error;
-	let isRegistering = false;
+	let success;
+	let isLoggingIn = false;
+	let isSending = false;
 
 	$: disabled = email === '' || email === undefined || password === '' || password === undefined;
 
@@ -34,15 +37,36 @@
 
 	const login = async () => {
 		error = '';
-		isRegistering = true;
+		isLoggingIn = true;
 		try {
 			const response = await axios.post(`${API_URL}/auth/login`, { email, password });
 			localStorage.setItem('joby_token', response.data.token);
 			await goto(ROUTES.DASHBOARD);
 		} catch (err) {
-			error = 'There is an error. Please try again later. 😥';
+			if (err.response.data.msg) {
+				error = err.response.data.msg;
+			} else {
+				error = 'There is an error. Please try again later. 😥';
+			}
 		}
-		isRegistering = false;
+		isLoggingIn = false;
+	};
+
+	const sendVerificationLinkAgain = async () => {
+		try {
+			isSending = true;
+			const response = await axios.post(`${API_URL}/auth/send-verification-email-again`, { email });
+			isSending = false;
+			error = '';
+			success = response.data.msg;
+		} catch (err) {
+			isSending = false;
+			if (err.response.data.msg) {
+				error = err.response.data.msg;
+			} else {
+				error = 'There is an error. Please try again later. 😥';
+			}
+		}
 	};
 </script>
 
@@ -108,16 +132,35 @@
 		<!-- Submit Button -->
 		<button
 			class="w-full bg-sky-500 text-white text-base font-semibold text-center p-[13px] rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-100 ease-out"
-			{disabled}
-			>{isRegistering ? $t('login.buttonLabelLoggingIn') : $t('login.buttonLabel')}</button
+			{disabled}>{isLoggingIn ? $t('login.buttonLabelLoggingIn') : $t('login.buttonLabel')}</button
 		>
 
 		<p class="text-gray-500 text-base mt-4">
 			{@html $t('login.question', { link: ROUTES.REGISTER })}
 		</p>
 
-		{#if error}
+		{#if error && error !== 'Please verify your email.'}
 			<Error {error} />
+		{/if}
+
+		{#if error && error === 'Please verify your email.'}
+			<p
+				class="bg-amber-50 border border-amber-300 text-amber-600 text-sm p-[0.9rem] mt-4 rounded-lg"
+				in:fade={{ duration: 100 }}
+			>
+				{error}
+				{#if isSending}
+					<span class="font-semibold">Sending...</span>
+				{:else}
+					<button class="font-semibold underline" on:click={sendVerificationLinkAgain}>
+						Send verification link again.
+					</button>
+				{/if}
+			</p>
+		{/if}
+
+		{#if success}
+			<Success {success} />
 		{/if}
 	</form>
 </div>

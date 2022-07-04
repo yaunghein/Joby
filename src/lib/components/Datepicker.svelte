@@ -268,9 +268,9 @@
 							{/each}
 							{#each numDays as day, index}
 								<div
-									class="p-1 {selectedDate?.toDateString() ===
+									class="p-1 rounded transition duration-100 ease-out hover:bg-sky-100 {selectedDate?.toDateString() ===
 									new Date(year, month, day).toDateString()
-										? 'bg-sky-500 text-white shadow-custom-shodow-2 rounded'
+										? 'bg-sky-500 text-white shadow-custom-shodow-2'
 										: 'text-gray-900'}"
 									key={index}
 								>
@@ -281,7 +281,7 @@
 											setSelectedDate(day);
 											dispatch('chooseDate', { date: selectedDate });
 										}}
-										class="cursor-pointer text-center text-sm leading-loose w-7 font-skylight"
+										class="cursor-pointer text-center text-sm leading-loose w-7"
 									>
 										{day}
 									</div>
