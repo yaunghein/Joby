@@ -36,6 +36,7 @@
 	};
 
 	const login = async () => {
+		success = '';
 		error = '';
 		isLoggingIn = true;
 		try {
