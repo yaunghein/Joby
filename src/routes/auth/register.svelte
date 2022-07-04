@@ -8,6 +8,7 @@
 
 	// components
 	import Error from '$components/Error.svelte';
+	import Success from '$components/Success.svelte';
 
 	// svgs
 	import EyeOpenIcon from '$svgs/EyeOpenIcon.svelte';
@@ -24,7 +25,8 @@
 	let password;
 	let passwordType = 'password';
 	let error;
-	let isLoggingIn = false;
+	let isRegistering = false;
+	let success;
 
 	$: disabled =
 		name === '' ||
@@ -40,15 +42,18 @@
 
 	const register = async () => {
 		error = '';
-		isLoggingIn = true;
+		isRegistering = true;
 		try {
 			const response = await axios.post(`${API_URL}/auth/register`, { name, email, password });
-			localStorage.setItem('joby_token', response.data.token);
-			await goto(ROUTES.DASHBOARD);
+			success = response.data.msg;
 		} catch (err) {
-			error = 'There is an error. Please try again later. 😥';
+			if (err.response.data.msg) {
+				error = err.response.data.msg;
+			} else {
+				error = 'There is an error. Please try again later. 😥';
+			}
 		}
-		isLoggingIn = false;
+		isRegistering = false;
 	};
 </script>
 
@@ -132,7 +137,7 @@
 		<button
 			class="w-full bg-sky-500 text-white text-base font-semibold text-center p-[13px] rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-100 ease-out"
 			{disabled}
-			>{isLoggingIn ? $t('register.buttonLabelLRegistering') : $t('register.buttonLabel')}</button
+			>{isRegistering ? $t('register.buttonLabelLRegistering') : $t('register.buttonLabel')}</button
 		>
 
 		<p class="text-gray-500 text-base mt-4">
@@ -141,6 +146,10 @@
 
 		{#if error}
 			<Error {error} />
+		{/if}
+
+		{#if success}
+			<Success {success} />
 		{/if}
 	</form>
 </div>

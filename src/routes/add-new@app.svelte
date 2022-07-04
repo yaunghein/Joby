@@ -14,11 +14,11 @@
 	import ContentShell from '$components/ContentShell.svelte';
 	import Error from '$components/Error.svelte';
 	import Success from '$components/Success.svelte';
+	import Datepicker from '$components/Datepicker.svelte';
 
 	// svgs
 	import AddFormIllustration from '$svgs/AddFormIllustration.svelte';
 	import ChevronDownIcon from '$svgs/ChevronDown.svelte';
-	import CalendarIcon from '$svgs/CalendarIcon.svelte';
 
 	// utils
 	import { getSuccessMessageByStatus } from '$utils';
@@ -177,45 +177,23 @@
 					</div>
 				</div>
 
-				<!-- Start Date Field  -->
 				{#if status === 'current' || status === 'goodbye'}
-					<div class="flex flex-col" in:fade={{ duration: 100 }}>
-						<label for="start_date" class="text-gray-500 text-sm mb-2">Start Date</label>
-						<div class="relative">
-							<input
-								type="date"
-								name="start_date"
-								id="start_date"
-								class="appearance-none w-full bg-gray-50 text-gray-900 border border-gray-200 rounded-lg p-3 pr-16 focus:border-sky-500 focus:ring-sky-500 cursor-pointer"
-								bind:value={startDate}
-							/>
-							<div
-								class="absolute right-0 top-0 h-full px-4 flex items-center justify-center border-l border-gray-200 pointer-events-none"
-							>
-								<CalendarIcon />
+					<div class="grid grid-cols- 1 sm:grid-cols-2 gap-1 sm:gap-4">
+						<!-- Start Date Field  -->
+						{#if status === 'current' || status === 'goodbye'}
+							<div class="flex flex-col" in:fade={{ duration: 100 }}>
+								<label for="start_date" class="text-gray-500 text-sm mb-2">Start Date</label>
+								<Datepicker on:chooseDate={(e) => (startDate = e.detail.date)} />
 							</div>
-						</div>
-					</div>
-				{/if}
+						{/if}
 
-				<!-- End Date Field  -->
-				{#if status === 'goodbye'}
-					<div class="flex flex-col" in:fade={{ duration: 100 }}>
-						<label for="end_date" class="text-gray-500 text-sm mb-2">End Date</label>
-						<div class="relative">
-							<input
-								type="date"
-								name="end_date"
-								id="end_date"
-								class="appearance-none w-full bg-gray-50 text-gray-900 border border-gray-200 rounded-lg p-3 pr-16 focus:border-sky-500 focus:ring-sky-500 cursor-pointer"
-								bind:value={endDate}
-							/>
-							<div
-								class="absolute right-0 top-0 h-full px-4 flex items-center justify-center border-l border-gray-200 pointer-events-none"
-							>
-								<CalendarIcon />
+						<!-- End Date Field  -->
+						{#if status === 'goodbye'}
+							<div class="flex flex-col" in:fade={{ duration: 100 }}>
+								<label for="end_date" class="text-gray-500 text-sm mb-2">End Date</label>
+								<Datepicker on:chooseDate={(e) => (endDate = e.detail.date)} />
 							</div>
-						</div>
+						{/if}
 					</div>
 				{/if}
 			</div>

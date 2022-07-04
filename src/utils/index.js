@@ -30,9 +30,8 @@ export const getDistance = (start, end) => {
 			unit: 'month'
 		}).split(' ')[0] -
 		years * 12;
-	console.log({ years, months });
 	if (months < 0) {
-		return `${months * -1}m`;
+		return `${12 + parseInt(months)}m`;
 	}
 	return (years > 0 ? `${years}y` : '') + ' ' + (months > 0 ? `${months}m` : '1m');
 };
