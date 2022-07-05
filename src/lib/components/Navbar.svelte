@@ -2,6 +2,8 @@
 	import { scale } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
+	import axios from 'axios';
 
 	const dispatch = createEventDispatcher();
 
@@ -19,6 +21,21 @@
 
 	// i18n
 	import { t, locale } from '$lib/translations';
+
+	// config
+	import { API_URL } from '$config/app-config';
+
+	// states
+	let totalUserCount = 0;
+
+	onMount(async () => {
+		try {
+			const response = await axios.get(`${API_URL}/users/count`);
+			totalUserCount = response.data.count;
+		} catch (err) {
+			console.log(err);
+		}
+	});
 
 	const LANGUAGES = [
 		{ key: 'en', flag: 'https://flagcdn.com/gb.svg' },
@@ -41,9 +58,18 @@
 
 <header class="bg-white h-[4.6875rem] sm:h-[5.625rem] 2xl:h-24 shadow-sm">
 	<div class="max-w-7xl px-4 md:px-10 mx-auto h-full flex items-center justify-between">
-		<a sveltekit:prefetch href={ROUTES.LANDING} class="w-20 h-10">
-			<Logo />
-		</a>
+		<div class="flex items-center gap-4">
+			<a sveltekit:prefetch href={ROUTES.LANDING} class="w-20 h-10">
+				<Logo />
+			</a>
+			{#if totalUserCount > 0}
+				<span
+					class="inline-block text-xs text-gray-700 font-normal bg-gray-50 px-3 py-2 rounded-full"
+				>
+					<b>{totalUserCount}</b> users registered
+				</span>
+			{/if}
+		</div>
 		<nav class="flex items-center">
 			<Menu class="relative">
 				<MenuButton class="hidden md:flex items-center">

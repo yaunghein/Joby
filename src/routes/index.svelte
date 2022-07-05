@@ -29,9 +29,10 @@
 				<a
 					sveltekit:prefetch
 					href={ROUTES.REGISTER}
-					class="bg-sky-500 text-white text-base font-semibold py-4 px-12 rounded-lg shadow-custom-shodow-1 transition-all duration-150 ease-out hover:bg-sky-400"
-					>{$t('landing.heroCtaButtonLabel')}</a
+					class="inline-block bg-sky-500 text-white text-base font-semibold py-4 px-12 rounded-lg shadow-custom-shodow-1 transition-all duration-150 ease-out hover:bg-sky-400"
 				>
+					{$t('landing.heroCtaButtonLabel')}
+				</a>
 				<p class="text-gray-900 text-xs mt-4 md:mt-8">
 					{@html $t('landing.owner', { link: ROUTES.ME })}
 				</p>
