@@ -2,6 +2,7 @@ const ROUTES = {
 	LANDING: '/',
 	REGISTER: '/auth/register',
 	LOGIN: '/auth/login',
+	FORGOT_PASSWORD: '/auth/forgot-password',
 	DASHBOARD: '/dashboard',
 	ADD_NEW: '/add-new',
 	EDIT: '/edit-job',

@@ -241,7 +241,7 @@
 							transition:scale={{ duration: 100, start: 0.9 }}
 						>
 							<MenuItem>
-								<span class="text-gray-500">{$current_user.email}</span>
+								<span class="text-gray-500 whitespace-nowrap">{$current_user.email}</span>
 							</MenuItem>
 							<div class="w-full h-[1px] bg-gray-100 my-4" />
 							<MenuItem>

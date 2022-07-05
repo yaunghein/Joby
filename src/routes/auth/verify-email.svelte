@@ -41,6 +41,10 @@
 	onMount(() => setTimeout(() => verifyEmail(), 3000));
 </script>
 
+<svelte:head>
+	<title>Verify Email - Joby - The Job Tracking Web App</title>
+</svelte:head>
+
 <div
 	class="max-w-7xl px-4 md:px-10 mx-auto h-full flex items-center justify-center"
 	in:fade={{ duration: 200 }}
