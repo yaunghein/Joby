@@ -43,8 +43,9 @@ I'm learning Express with a Udemy course, and the instructor builds only the API
 
 ## Futher Learning & Development
 
-- Email confirmation
-- Reset password
+- Custom Datepicker (DONE)
+- Email confirmation (DONE)
+- Reset/Forgot password (DONE)
 - Settings
 
 If you'd like to talk, you can contact me here: https://www.linkedin.com/in/yanaunghein/
