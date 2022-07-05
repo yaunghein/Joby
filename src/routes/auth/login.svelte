@@ -136,6 +136,10 @@
 			{disabled}>{isLoggingIn ? $t('login.buttonLabelLoggingIn') : $t('login.buttonLabel')}</button
 		>
 
+		<a href={ROUTES.FORGOT_PASSWORD} class="block text-sky-500 hover:underline text-base mt-4">
+			Forgot password?
+		</a>
+
 		<p class="text-gray-500 text-base mt-4">
 			{@html $t('login.question', { link: ROUTES.REGISTER })}
 		</p>
